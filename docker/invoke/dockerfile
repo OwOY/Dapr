@@ -1,0 +1,12 @@
+FROM python:3.9.13
+ADD . .
+RUN wget -q https://raw.githubusercontent.com/dapr/cli/master/install/install.sh -O - | /bin/bash
+RUN dapr init --slim
+RUN pip install --no-cache-dir -r requirements.txt
+CMD ["dapr", "run", \
+    "--app-id", "app", \
+    "--app-port", "8080", \
+    "--placement-host-address", "dapr_placement:50006", \
+    "--resources-path", "/root/.dapr/components", \
+    "python", "mainapp.py"\
+]
