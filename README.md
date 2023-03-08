@@ -14,11 +14,16 @@
 
 <br/>  
 
+
 # How to Build
 ## Environment
 - python 3.9.13
 - Ubuntu 20.04
 
+## Installtion
+```
+python -m pip install dapr-ext-fastapi
+```
 ## Component Config
 - default Schema
 詳細使用方式可參閱 [官方文檔](https://docs.dapr.io/operations/components/component-schema/)
